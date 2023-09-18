@@ -1,0 +1,33 @@
+h1 {
+  color: aqua;
+}
+
+h2 {
+  color: pink;
+}
+
+h3 {
+  color: darkorange;
+}
+
+.absos {
+  padding: 10px;
+  color: blue;
+}
+
+.rela {
+  padding: 10px;
+  font-size: 2rem;
+  color: brown;
+}
+
+.rela .summary {
+  color: black;
+  font-style: italic;
+}
+
+.views {
+  color: darkseagreen;
+  font-size: calc(16px + 1vw);
+  line-height: calc(1.1em + 0.5vw);
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css-units.css">
+  <title>CSS units</title>
+</head>
+<body>
+  <h1>Understanding different units in CSS</h1>
+
+  <h2>Absoloute Units</h2>
+  <div class="absos">
+    <p>PX is an abosoloute unit because the size of a pixel does not change relatively. Only abosloute unit.</p>
+    <p>REM for font size and PX for everything else - general rule of thumb</p>
+    <p>PX - is a unit of length which roughly corresponds to the width or height of a single dot that can be comfortably seen by the human eye without strain, but is otherwise as small as possible. By definition, this is the physical size of a single pixel at a pixel density of 96 DPI, located an arms length away from the viewers eyes.</p>
+  </div>
+
+  <h2>relative units</h2>
+  <div class="rela">
+    <p>em and rem both refer to font size - Rule of thumb is favor REM - Shout outs to Michael Stipe</p>
+    <p>em is relative to parent - if parents font size is 16px then 2em would be 32px - if fontsize of an element changes so will the value of em in the child element.</p>
+    <p>rem however refers to the font size set in the root HTML element - meaning if parent and child within a HTML file have 2 rem both will be the SAME</p>
+    <p class="summary">Using a relative unit does not discriminate against the 1% of users that change their default browser settings. If you want users to be able to boost the font size on their browser you should use em or rem.
+      This being said modern browsers will scale even absoloute values(px) meaning this is really just a design choice but something to consider.
+    </p>
+
+    <h3>viewports</h3>
+    <div class="views">
+      <p>Units VH and VW relate to the size of the viewport e.g. 1vh === 1%</p>
+      <p class="VW">A little Volkswagen</p>
+      <p class="VH">And a little VolksHagen emphasis on the H</p>
+      <p>Can use the calc method to control this.</p>
+    </div>
+  </div>
+</body>
+</html>
