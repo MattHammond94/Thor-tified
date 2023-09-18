@@ -10,6 +10,36 @@ h1 {
   font-family: 'Noto Sans Nabataean', sans-serif;
   font-family: 'Oswald', sans-serif;
   font-family: 'Roboto Mono', monospace;
+  pointer-events: none;
+}
+
+.gradient {
+  font-size: 3rem;
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214,202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.2em;
+}
+
+.gradient-two {
+  font-size: 3rem;
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214,202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.2em;
+  pointer-events: none; /* prevents the ability of highlighting text */
+  opacity: 0;
+  animation: fade 6s ease-in forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .close {

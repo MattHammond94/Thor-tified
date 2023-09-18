@@ -1,0 +1,156 @@
+/* padding is the amount of inner space an element has margin is whitespace surrounding the element - border is a border around the element between the two */
+
+html {
+  scroll-behavior: smooth;  /* <-- used for the anchor tag - effects how the scroll naviagtes to image */
+}
+
+body {
+  min-height: 100vh;
+  background-color: blue;
+  color: #6CFAA8;
+  background-image: url("./img/00.jpg");
+  background-size: cover;
+  background-position: top right;
+  background-blend-mode: multiply;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
+
+.play {
+  width: 300px;
+  height: 400px;
+  background-color: #6CFAA8;
+  border: solid blueviolet 10px;
+  border-radius: 10% 30% 50% 70%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 10px 5px 5px pink;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.play .text {
+  color: blue;
+  align-self: center;
+}
+
+.play .button {
+  padding: 2px;
+  margin: 2px;
+  align-self: center;
+}
+
+.scroll {
+  background-color: #2ecc71;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #09ACAC;
+  border-radius: 10px;
+  overflow: scroll;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.scroll h2 {
+  writing-mode: vertical-lr;
+  color: black;
+}
+
+.flexers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  background: linear-gradient(rgb(67, 124, 205), rgb(69, 214, 222));
+  gap: 30px; /* gap defines the gap between elements when using flex for display */
+  margin-bottom: 20px;
+}
+
+.newimage {
+  height: 500px;
+  width: 500px;
+  opacity: 0.6;
+  transform: scaleX(-1); /* <--- This flips an image */
+  border-radius: 50%; /* <-- makes img/element a circle */
+  margin-bottom: 20px;
+}
+
+.snapper {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20%;
+  background: white;
+  display: flex;
+  overflow-x: scroll;
+
+  scroll-snap-type: x mandatory;  /* <-- This combined with line 104 creates the snap function - Can use proximity over mandatory for a more natual user experience */
+}
+
+.snapper div {
+  min-width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  color: white;
+  border-radius: 20%;
+
+  scroll-snap-align: center;
+}
+
+.snapper .box1 {
+  border-radius: 20%;
+  background-color: #09ACAC;
+}
+.snapper .box2 {
+  background-color: #2ecc71;
+}
+
+.snapper .box3 {
+  background-color:chocolate;
+}
+
+.snapper .box4 {
+  background-color:darkmagenta;
+}
+
+.snapper .box5 {
+  background-color:crimson;
+}
+
+.scroll-two {
+  background-color: #2ecc71;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #09ACAC;
+  border-radius: 10px;
+  overflow: auto;
+  resize: both;  /* <-- This and the line above alows the div to be resized and auto adjusts content - instead of "both" you can specify Y or X axis by using "vertical" or "horizontal" */
+  display: flex;
+  gap: 20px;
+  margin: 30px;
+  color: black;
+}
+
+.scroll-two h2 {
+  color: black;
+  margin-left: 10px;
+}
+
+.box {
+  background: white;
+  width: 30rem;
+  height: 40rem;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is used to scale an image into the defined div space in .box */
+}
