@@ -1,0 +1,64 @@
+/* * - universal selector - applies to every element */ 
+
+* {
+  font-size: 70px;
+}
+
+/* ">" - child combinator - Will only select direct children */
+/* main > div  - will only select divs with class of child */
+/* main > div > div - will only select divs with a class of grand-child */
+
+/* .parent > div > div {
+  color: purple;
+} */
+
+/* "+" - adjacent sibling combinator - Will select elements on the same level of identation */
+/* .child-group1 + div - selects the grandchild div of .child-group2 */
+/* .child-group1 + div + div - selects the grandchild div of .child-group3 */
+
+/* .child-group1 + div {
+  color: red;
+} */
+
+/* .child-group1 + div + div {
+  color: purple;
+} */
+
+/* ~ - general sibling combinator - Selects all elements siblings */
+/* .child-group1 ~ div - selects all of group2 and group3 child divs */
+
+/* .child-group1 ~ div {
+  color: red;
+} */
+
+/* ============================================= */
+
+/* Pseudo classes and Pseudo-selectors  */
+
+input:focus {
+  background-color: lightblue;
+  color: red;
+}
+
+.child-group3 .grand-child-group3:hover {
+  background-color: yellow;
+  color: green;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:visited {
+  color: red;
+}
+
+.button-one:active {
+  box-shadow: 2px 2px 5px red;
+}
+
+/* :root is a special class that represents the very top level of the document === html element */
+/* :root is generally where you place global CSS rules */
+
+/* :first-child and :last-child will match */
