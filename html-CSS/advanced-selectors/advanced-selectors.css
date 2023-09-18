@@ -61,4 +61,65 @@ a:visited {
 /* :root is a special class that represents the very top level of the document === html element */
 /* :root is generally where you place global CSS rules */
 
-/* :first-child and :last-child will match */
+/* :first-child and :last-child - will match elements that are the first or last sibling */
+
+/* :empty - will match elements that have no children */
+
+/* :only-child - will match elements that dont have any siblings */ 
+
+/* nth-child is a flexible pseudo class - used as below */
+
+.listy div:nth-child(odd) {
+  text-decoration: underline;
+  color: red;
+} /* can also be odd */
+
+.listy div:nth-child(3) {
+  background-color: aqua;
+}
+
+.listy div:nth-child(2n) {
+  background-color: purple;
+}  /* every 2nd element */
+
+/* ============================================= */
+/* Pseudo-elements */
+
+/* ::marker for customizing li element dots/dashes */
+
+.list-two{
+  margin-left: 50px;
+}
+
+.list-two li::marker {
+  color: red;
+  content: "🧡 ";
+}
+
+/* ::first-letter and ::first-line give seperate styling to first letters and lines (Does what it says on the tin really) */
+
+/* ::selection - defines the style of highlighted elements */
+
+.pmoney::selection {
+  color: lightblue;
+  background-color: pink;
+}
+
+/* ::before and ::after work as below: */
+
+.emojify::before {
+  content: '😎 🥸 🤓';
+}
+
+.emojify::after {
+  content: '🤓 🥸 😎';
+}
+
+/* ================================================ */
+/* Attribute selectors - Used for selecting elements with src attributes e.g. imgs */
+/* [src] - will target any element with a src attribute - img[src] - targets imgs  - img[src="img.jpg] - targets the img element with specific src attribute" */
+
+/* [class^='abc'] { }  - targets any class that begins with 'abc' */
+/* [src$='.jpg'] { } - This will target any src attribute that ends in '.jpg' */
+/* [for*='ill'] { } - This will target any attribute that has 'ill'  anywhere in it e.g. 'silly' */
+
