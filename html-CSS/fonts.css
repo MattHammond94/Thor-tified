@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Nabataean&family=Oswald:wght@300&family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Nabataean&family=Oswald:wght@300&family=Roboto+Mono:wght@500&display=swap');
+
+body {
+  background-color: bisque;
+}
+
+h1 {
+  color: midnightblue;
+  font-family: 'Noto Sans Nabataean', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.close {
+  letter-spacing: -0.15em;
+}
+
+.first {
+  font-family: 'Noto Sans Nabataean', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  color: lightslategrey;
+  font-style: italic;
+  display:flex;
+  letter-spacing: 0.5em;
+}
+
+.system-font-stack {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: hotpink;
+  line-height: 1.5;
+}
+
+.play {
+  font-size: 3rem;
+}
+
+.play .a {
+  color: goldenrod;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.play .b {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.play .c {
+  color:darkslategrey;
+  text-transform: uppercase;
+}
