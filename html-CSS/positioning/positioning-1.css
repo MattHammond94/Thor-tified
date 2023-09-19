@@ -1,0 +1,146 @@
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}  /* As you can see on the page this prevents the horizontal scrolling now that div element "box-1" is outside off the main page. */
+
+/* Absoloute allows the use of top, bottom, righ and left to position an element on the page */
+/* To position these absoloute elements within a parent element set the container/parent element to relative - As below: */
+
+.container-1 {
+  height: 500px;
+  width: 500px;
+  background-color: aquamarine;
+  margin: 20px;
+
+  position: relative;
+}
+
+.box-1 {
+  height: 100px;
+  width: 100px;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  position: absolute;
+  top: -50px;
+  right: -50px;
+
+  z-index: -1; /* <-- moves element behind */
+}
+
+
+.box-2 {
+  height: 100px;
+  width: 100px;
+  background-color: darkslateblue;
+  color: whitesmoke;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+
+.box-3 {
+  height: 100px;
+  width: 100px;
+  background-color: crimson;
+  color: whitesmoke;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+
+
+
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+
+/* ======================================================= */
+/* Static elements do not have access to top, bottom, right left properties nor the z-index props */
+
+/* Relative is very similar to absoloute but the positioning remains relative to the flow of the DOCUMENT */
+/* advisable to use relative when you want to keep elements in normal flow of document and use absoloute when you want to remove your element from normal flow of document */
+
+.container-2 {
+  margin: 20px;
+  height: 500px;
+  width: 500px;
+  background-color: darksalmon;
+  margin-bottom: 1000px;
+
+  position: relative;
+}
+
+.box-4 {
+  height: 100px;
+  width: 100px;
+  background-color: crimson;
+  color: whitesmoke;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 0px;
+  left: 200px;
+}
+
+/* === fixed and sticky === */
+/* fixed is similar to absoloute in that it removes elements from the DOCUMENT */
+/* See below how a fixed element remains in place even when scrolling. */
+
+.box-5 {
+  height: 50px;
+  width: 50px;
+  background-color: midnightblue;
+  color: whitesmoke;
+  border-radius: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  z-index: 1;
+
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* Sticky is similar to relative and fixed */
+/* Sticky only works when we define a top property. */
+/* The value we put for top defines at which point the element sticks as we scroll down - In this case it sticks from 50px */
+/* Will only scroll down to the bottom of its container. */
+.box-6 {
+  height: 100px;
+  width: 100px;
+  background-color: darkcyan;
+  color: whitesmoke;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  top: 50px;
+}
