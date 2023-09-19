@@ -1,0 +1,55 @@
+/* Custom properties/CSS variables */
+/* Defined by double hyphen followed by hyphen seperated(keebab-case) name(can be anything) */
+/* --color-error-text: red; */
+/* called as: color: var(--color-error-text); */
+
+/* the VAR funct accepts two params/args - first is the custom property as above ^^^ */
+/* second param is a optional fallbak value - the fallback value will be used if first is invalid or hasnt yet been declared */
+
+/* Declaring custom properties in the root allows global access. */
+
+:root { 
+  --header-color: red;
+  --header: 3rem;
+  --footer: 40px;
+  --main: calc(100vh - calc(var(--header) + var(--footer)));
+}
+
+/* Clamp - makes elements fluid and responsive */
+/* Takes 3 values - Smallest value - Ideal value - Largest value */
+
+h1 {
+  color: var(--header-color);
+  font-size: clamp(1px, 5vw, 4rem);
+}
+
+.container-1 {
+	display: flex;
+  box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 6px solid black;
+	resize: both;
+	overflow: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Min - in example below min will take up all 300px as its set to 100% - if 300px are not available i.e. it is shrunk the image will switch to 100% of parents width/ */
+
+.iconHolder {
+  width: min(300px, 100%);
+  height: min(300px, 100%);
+  box-sizing: border-box;
+  border: 6px solid blue;
+}
+
+/* Max - works the same way only in reverse (It will select the largest possible value from within the parenthesis e.g. width: max(100px, 4em, 50%); */
+
+/* .iconHolder {
+  width: max(100px, 4em, 50%);
+  height: max(100px, 4em, 50%);
+  box-sizing: border-box;
+  border: 6px solid blue;
+} */
