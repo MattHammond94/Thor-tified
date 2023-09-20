@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;  /* <-- used for the anchor tag - effects how the scroll naviagtes to image */
+  accent-color: rgb(255, 255, 128);  /* <-- Used to style checkboxes */
 }
 
 body {
@@ -153,4 +154,21 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover; /* This is used to scale an image into the defined div space in .box */
+}
+
+/* form CSS */
+
+input {
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
 }
