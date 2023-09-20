@@ -105,3 +105,25 @@
   }
   
 }
+
+/* Clip path allows you to shape an image accordingly: */
+
+.img-1 {
+  height: 400px;
+  width: 400px;
+  clip-path: circle(50%);
+}
+
+.img-2 {
+  height: 350px;
+  width: 400px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Polygon co-ordinates go A(50% X) - B(100% Y) - C(100% X, 100% Y)*/
+
+.img-3 {
+  height: 400px;
+  width: 400px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
