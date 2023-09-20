@@ -40,3 +40,160 @@
   width: 20px;
 }
 
+/* Flex shorthand is used on flex ITEMS not contrainers - Can set 3 properties on flex  - GROW, SHRINK, BASIS */ 
+/* "flex: 1" is shorthand for flex-grow: 1, flex-shrink: 1 and flex-basis: 0 */
+/* Applying flex: 1 to every ITEM inside our CONTAINER we are telling every div to grow the same amount. */
+/* Flex basis sets the initial size of a flex ITEM - using auto as a basis tells the item to look for a width declaration */
+
+/* =============================================== */
+
+/* justify-content used on the CONTAINER defines the layout used for the internal elements */
+/* align-items aligns the items within the parent container. */ 
+
+.flex-container-3 {
+  background-color: blueviolet;
+  height: 200px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container-3 div {
+  margin: 10px;
+}
+
+.flex-container-3 .one {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 100px;
+  width: 100px;
+}
+
+.flex-container-3 .two {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 66px;
+  width: 100px;
+}
+
+.flex-container-3 .three {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 33px;
+  width: 100px;
+}
+
+/* ================================= */
+
+.flex-container-4 {
+  height: 600px;
+  gap: 10px;
+  background-color: blue;
+  margin-top: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Notice how in this example if we remove align-items center the divs return to the left of the container. */
+/* Justfiy-content applies to the Cross (vertical) axis and align-items applies to the main axis(Horizontal) */
+/* The axis' are flipped in the case of column direction */ 
+
+.flex-container-4 div {
+  background: orange;
+  border: 4px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+/* ================================= */
+/* align-self can be used to move each ITEM individually from the others. */
+
+.flex-container-5 {
+  background-color: cornflowerblue;
+  height: 200px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-container-5 .one {
+  background-color: darkcyan;
+  border: 4px solid darkgoldenrod;
+  height: 100px;
+  width: 200px;
+
+  flex-shrink: 0;
+}
+
+.flex-container-5 .two {
+  background-color: darkcyan;
+  border: 4px solid darkgoldenrod;
+  height: 100px;
+  width: 200px;
+
+  flex-grow: 2;
+}
+
+.flex-container-5 .three {
+  background-color: darkcyan;
+  border: 4px solid darkgoldenrod;
+  height: 100px;
+  width: 50px;
+
+  flex-grow: 1;
+}
+
+/* flex-shrink and flex-grow can be used on individual ITEMS to ensure they either do not shrink at all or they stretch with the page to fill space(grow.) */
+/* Flex grow divides leftover space from within container - As I have set item two with flex grow 2 it takes twice as much space as ITEM 3*/
+/* This space is added from the defined width on said item */
+/* To override this add a flex-basis to ensure the items size is added to from 0. */
+
+/* ================================= */
+
+.flex-container-6 {
+  height: 200px;
+  background-color: crimson;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+
+  justify-content: space-around;
+}
+
+.flex-container-6 .one {
+  background-color: darkslateblue;
+  border: 4px solid pink;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+
+  align-self: flex-end;
+}
+
+.flex-container-6 .two {
+  background-color: darkslateblue;
+  border: 4px solid pink;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+
+  align-self: center;
+}
+
+.flex-container-6 .three {
+  background-color: darkslateblue;
+  border: 4px solid pink;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
