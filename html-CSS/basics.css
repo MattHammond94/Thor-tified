@@ -172,3 +172,56 @@ input:invalid {
 input:valid {
   border-color: green;
 }
+
+
+/* ================================================ */
+/* Using is, where, has etc */
+
+.item :is(h1, h4, p) {
+  color: green;
+}
+
+/* :where is the same as is however has a lower priority than is and therefore will be overridden by parent element styling */
+
+/* :not is "everything but" */
+.item :not(p) {
+  text-decoration: underline;
+}
+
+/* :has checks a container to see if it includes an element and if it does applies styling accordingly */ 
+
+.review:has(button) .content {
+  filter: blur(10px);
+}
+
+
+/* ==================================================== */
+
+/* VIDEOS!!!! */
+video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* Styling inputters: */
+
+#inputter {
+  height: 100px;
+  width: 400px;
+  margin: 120px;
+  padding: 20px;
+  border: 2px solid blue;
+  color: blue;
+  caret-color: blue;  /* Adjusts the color of the blinking text cursor */ 
+  font-size: 40px;
+  border-radius: 2%;
+}
+
+#inputter:focus {
+  /* outline: none;  <-- This removes outline completely */
+  outline: 10px solid green;
+}
+
+#inputter::placeholder {
+  color: blue;
+}
