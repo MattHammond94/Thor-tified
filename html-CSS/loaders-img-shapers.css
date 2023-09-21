@@ -107,11 +107,18 @@
 }
 
 /* Clip path allows you to shape an image accordingly: */
+/* using the blur filter with the hover/active pseudo selectors is effective for masking images */
 
 .img-1 {
   height: 400px;
   width: 400px;
   clip-path: circle(50%);
+
+  filter: blur(2px);
+}
+
+.img-1:hover {
+  filter: none;
 }
 
 .img-2 {
@@ -126,4 +133,46 @@
   height: 400px;
   width: 400px;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Using perspective on container in connection with rotateY to create moving graphics: */
+
+.container-frame {
+  width: 500px;
+  height: 500px;
+  border: 3px solid purple;
+  perspective: 800px;
+  margin: 100px
+}
+
+.shape {
+  width: 500px;
+  height: 500px;
+  background-color: lightblue;
+  /* transform: rotateY(45deg); */
+  transform: rotateY(145deg);
+  transition: all 5s ease;
+}
+
+/* Styling inputters: */
+
+#inputter {
+  height: 100px;
+  width: 400px;
+  margin: 120px;
+  padding: 20px;
+  border: 2px solid blue;
+  color: blue;
+  caret-color: blue;  /* Adjusts the color of the blinking text cursor */ 
+  font-size: 40px;
+  border-radius: 2%;
+}
+
+#inputter:focus {
+  /* outline: none;  <-- This removes outline completely */
+  outline: 10px solid green;
+}
+
+#inputter::placeholder {
+  color: blue;
 }
