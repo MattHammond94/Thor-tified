@@ -97,3 +97,13 @@ h1 {
   top: 100px;
   left: 0px;
 }
+
+.img-background {
+  background: url("/html-CSS/img/00.jpg") center center / cover no-repeat;
+  color: #de466c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Roboto Mono', monospace;
+  pointer-events: none;
+  font-size: 100px;
+}
