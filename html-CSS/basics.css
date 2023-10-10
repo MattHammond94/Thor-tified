@@ -272,3 +272,8 @@ video {
   opacity: 1;
   transition: .5s;
 } 
+
+/* Visibility hidden hides element - ensures no pointer events or highlighting. */
+.hidden-a {
+  visibility: hidden;
+}
