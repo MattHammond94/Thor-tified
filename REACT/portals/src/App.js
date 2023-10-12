@@ -32,3 +32,6 @@ function App() {
 }
 
 export default App;
+
+/* If zIndex of an element is within a container which has a zIndex its zIndex will be subservient to that zIndex.*/
+/* See MODAL component for further notes... */
