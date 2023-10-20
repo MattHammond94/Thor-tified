@@ -38,4 +38,14 @@ export default function Modal({ open, children, onClose }) {
 
 /* The Modal component was a child of the div within the App component */
 /* Now we have created a portal to the div element 'portal' within index.html */
-/* Because the MODAL comp now renders outside of its parent  */
+/* Because the MODAL comp now renders outside of its parent element it does not fall victim to the casciding styles applied
+in the parent element. */
+
+/* =========================================== */
+
+/* Event delegation is built into portals - all events on this modal component will now delegate up to parents of the modal */
+
+/* The Modals parent in App.js is class "a-name" the container for our button and Modal. by adding a console log to "a-name" 
+not only causes a log when that div/button is clicked but also when the rendered Modal is clicked. */
+
+/* Because the Modal is a child of both the portal div in index.js and also within "a-name" it inherits this onclick functionality. */ 
