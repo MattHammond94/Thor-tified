@@ -1,16 +1,12 @@
+import { useState } from 'react';
 
 function App() {
+  const [name, setName] = useState('');
 
   return (
     <>
-      <div className="useRef">
-        useRef Hook
-      </div>
-      <div>
-        Another Div
-      </div>
-      <h1>Seems to be working</h1>
-      
+      <input value={name} onChange={e => setName(e.target.value)} />
+      <div>My name is {name}</div>
     </>
   )
 }
