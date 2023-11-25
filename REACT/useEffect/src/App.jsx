@@ -47,3 +47,10 @@ export default App
 
 // On lines 10-13 because nothing is within the dependency array this effect will only run on the first initial render because nothing is being checked for change.
 
+
+// Notes on mounting: 
+
+// The mount is the process of inserting a component into the DOM
+// There are three main phases in the lifecycle of a React component: mounting, updating, and unmounting.
+// During the mounting phase - React initializes the component, creates its corresponding DOM elements, and inserts them into the browser's DOM
+// First render is the same as mounting to the page. 
