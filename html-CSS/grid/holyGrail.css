@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 100px 150px 350px 100px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.box-1 {
+  background-color: cornflowerblue;
+  grid-area: 1 / 1 / 1 / 5;
+}
+
+.box-2 {
+  background-color: red;
+  grid-area: 2 / 1 / 4 / 2;
+}
+
+.box-3 {
+  background-color: darkcyan;
+  grid-area: 2 / 2 / 2 / 5;
+}
+
+.box-4 {
+  background-color: chocolate;
+  grid-area: 3 / 2 / 4 / 5;
+}
+
+.box-5 {
+  background-color: aquamarine;
+  grid-area: 4 / 1 / 5 / 5;
+}

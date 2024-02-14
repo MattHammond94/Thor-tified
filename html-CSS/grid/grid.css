@@ -1,13 +1,35 @@
+/* Defining rows and columns is the process of creating TRACKS */
+/* A 3 X 3 grid is the process of defining 3 horizontal and 3 veritcal tracks */
+/* The LINES in a grid are the numbers that define the start and end of a track */
+/* The space inside of the of a single row track and a single column track is a CELL */
+
+/* ROWS GO FROM TOP TO BOTTOM 
+COLUMNS GO FROM LEFT TO RIGHT  */
+
 .grid-container {
   display: grid;
-  grid-template-columns: 200px 100px;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px;
   background-color: blue;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.grid-item {
+  background-color: darkseagreen;
+  border: 2px solid aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
 }
 
 .grid-item-1 {
-  background-color: black;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .grid-item-2 {
-  background-color: aqua;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
