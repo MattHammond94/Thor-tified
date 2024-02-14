@@ -1,0 +1,139 @@
+/* The below container is a grid with 3 columns all set to be 1 fraction each meaning all items are evenly spaced within 3 columns */
+/* Notice if I add more than 3 items they will still be positioned evenly. */
+.container {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: 200px
+}
+
+.item {
+  background-color: red;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The below container is made up of 6 rows and 6 columns */
+.container-2 {
+  background-color:burlywood;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px;
+  margin-top: 20px;
+}
+
+/* Positioning items within the grid can be done using the properties below: */
+/* WHEN POSITIONING REMEMBER: */
+/* ROWS GO DOWN  */
+/* COLUMNS GO RIGHT */
+
+/* Positioning at row-start: 1; and also column-start: 1; will position at the top left of a grid.
+Positioning at row-start: 6; and also column-start: 6; will position at the bottom right of the current grid. */
+
+.item-4 {
+  grid-row-start: 3;
+  grid-column-start: 6;
+}
+
+/* using all four properties as below allows your to position elements within the grid exactly: */
+.item-5 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+
+.item-6 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item-7 {
+  grid-row-start: 4;
+  grid-row-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+/* Short hand for the above is by using an aspect ratio to define the start and end: */
+.item-8 {
+  grid-row: 6 / 6;
+  grid-column: 6 / 6;
+}
+
+/* USING GRID AREA: */
+
+.container-3 {
+  background-color:darkslateblue;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px;
+  margin-top: 20px;
+
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+
+/* Grid area takes 3 properties in order: row-start, col-start, row-end, col-end; */
+.item-9 {
+  /* grid-area: 2 / 1 / 7 / 7; */
+  /* Can also use minus values to work the same: */
+  grid-area: 2 / 1 / -1 / -1;
+}
+
+/* GRID AREA CAN BE USED FOR LAYERING ITEMS: */
+.item-10 {
+  grid-area: 1 / 5 / 4 / 7;
+  z-index: 1;
+  background-color: aqua;
+}
+
+.item-11 {
+  grid-area: 1 / 1 / 1 / 6;
+  background-color: bisque;
+}
+
+/* if I were to add a new item inside this grid here it will be added implicitly meaning it will not abide by the rules set for our grid in the container */
+/* Using the grid-auto-rows property sets the property for any implicitly added rows: */
+.container-3 {
+  /* grid-auto-rows: 100px;  */
+}
+
+/* If you did not want an implicit value to be added as a row we can instead ensure it is added as a column like so: */
+.container-3 {
+  grid-auto-flow: column;
+  grid-auto-columns: 100px;
+}
+
+/* ============================================== */
+/* Using MIXMAX and REPEAT with grid: */
+
+/* Minmax function takes two args: first arg is the minimum size an object can be and the second is the max. */
+/* This can be used as a value when setting out rows/columns if we want an individual row or column to have a different size to another. */
+
+/* Repeat takes two args - the amount of times you want a value to be repeated and the value to be repeated */
+
+.container-4 {
+  margin-top: 25px;
+  background-color: darkslategrey;
+  display: grid;
+
+  /* grid-gap is used with grid and can take two values: first value is the gap applied to the ROWS and the second is applied to the COLUMNS */
+
+  grid-gap: 4em 3em;
+
+  /* The two below are the same just using repeat: */
+
+  /* grid-template-rows: 100px 100px 100px; */
+  grid-template-rows: repeat(3, 100px);
+
+
+  grid-template-columns: 100px minmax(100px, 3fr) 1fr;
+}
+
+
+
+
