@@ -1,0 +1,35 @@
+.container {
+  background-color: darkslategray;
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-rows: 100px 300px 100px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    'header header'
+    'main aside'
+    'footer footer';
+}
+
+.item {
+  background-color: burlywood;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+  grid-area: header;
+}
+
+.item-2 {
+  grid-area: main;
+}
+
+.item-3 {
+  grid-area: aside;
+}
+
+.item-4 {
+  grid-area: footer;
+}

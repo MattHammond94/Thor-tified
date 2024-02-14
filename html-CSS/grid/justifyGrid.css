@@ -1,0 +1,70 @@
+/* justify properties on grid elements have a default set to stretch */
+
+/* Adding justify ITEMS properties to the grid container will effect all the items within the grid: */
+.container {
+  background-color: darkslategray;
+  display: grid;
+  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(4, 1fr);
+
+  justify-items: start;
+  align-items: end;
+
+  /* justify-items: center;
+  align-items: center; */
+}
+
+/* You can then select individual items from the grid and adjust their properties outside of the parent properties */
+.item-2 {
+  justify-self: center;
+  align-self: center;
+}
+
+.item-3 {
+  justify-self: stretch;
+  align-self: baseline;
+}
+
+.item-4 {
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+/* ==================================================================== */
+/* Using CONTENT instead of items positions all elements within the grid as opposed to the items within  */
+.container-1 {
+  margin-top: 20px;
+  background-color: cornflowerblue;
+  display: grid;
+  height: 400px;
+  gap: 10px;
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(2, 200px);
+
+  /* Content: */
+  justify-content: center;
+  align-content: center;
+}
+
+
+/* ===================================================== */
+/* USING AUTOFIT */
+
+/* using autofit keyword in conjunction with repeat allows for auto responsiveness without the need for a media query */
+
+.container-2 {
+  margin-top: 20px;
+  background-color: plum;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.item {
+  background-color: burlywood;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
