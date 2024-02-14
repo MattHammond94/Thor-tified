@@ -1,0 +1,38 @@
+/* FLEX WRAP allows responsive flexbox behaviour without the use of media queries */
+
+.wrapper {
+  background-color: darkslategrey;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Adding flex wrap to the flex container means that whenever one of the flex ITEMS (.box elements) reaches a width smaller than their defined min-width (200px) */
+/* The items will drop and wrap to the line below */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Using flex grow 1 on the flexbox ITEMS ensures that they will always take up an even amount of space in their flex container */
+.box {
+  height: 100px;
+  min-width: 200px;
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one {
+  background-color: blanchedalmond;
+}
+
+.two {
+  background-color: crimson;
+}
+
+.three {
+  background-color: deepskyblue;
+}
