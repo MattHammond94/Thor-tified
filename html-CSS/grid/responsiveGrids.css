@@ -1,0 +1,229 @@
+/* USING MIN AND MAX EFFECTIVELY: */
+
+/* USING MIN AND MAX IS MOST EFFECTIVE ONLY WHEN USING A VALUE WHICH IS NOT STATIC (A fixed value) */
+
+.container {
+  background-color: crimson;
+  display: grid;
+  gap: 15px;
+  padding: 10px;
+
+
+  /* ROWS WHICH IS CONTROLLING THE SIZE FROM TOP TO BOTTOM */
+  /* Notice that when we shrink the grid from the bottom to top */
+  
+  /* if there is more than 400px worth of space (2 x 200px = the total size of our grid length ways) the two rows will be 200px each. */
+
+  /* If however they are shrunk to be smaller than 400px The two rows will occupy 50% of the available space: */
+
+  /* MIN WILL CALCULATE BASED ON THE LESSER OF THE TWO VALUES PASSED */
+  grid-template-rows: repeat(2, min(200px, 50%));
+
+
+  /* COLUMNS WHICH ARE CONTROLLING THE SIZE FROM LEFT TO RIGHT: */
+  /* When we shrink the grid from  */
+
+  /* in effect we are saying If there is more than 250px of space available then the cells can take up to 15% otherwise they will stop at 50px in width. */
+
+  /* MAX WILL CALCULATE BASED ON THE LARGER OF THE TWO VALUES PASSED  */
+  grid-template-columns: repeat(5, max(50px, 15%));
+
+
+  /* ============================================== */
+  /* The two values below allow for the resizing of the grid and a scroll for the overflowing elements */
+  resize: both;
+  overflow: auto;
+}
+
+.box {
+  background-color: cornflowerblue;
+  border: 2px solid wheat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* =============================================================== */
+/* USING MINMAX */
+
+/* MINMAX takes two args: the min size a grid track can be and the max size a grid track can be */
+
+/* it makes sense for grid to use two static values: */
+.container-2 {
+  margin-top: 20px;
+  background-color:indianred;
+  display: grid;
+  gap: 15px;
+  padding: 10px;
+
+
+  /* Notice how setting the rows(height) as 1 fr each and then using minmax for the columns(width) */
+  /* Allows the grid to be stretched but remain evenly proportioned: */
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, minmax(75px, 200px));
+
+  /* the MINMAX is ensuring that the width of the tracks are never smaller than 75px but also never exceed 200px */
+
+  resize: both;
+  overflow: auto;
+}
+
+.child {
+  background-color: deepskyblue;
+  border: 2px solid cadetblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* consider MIN-CONTENT: */
+/* MIN-CONTENT can be applied to the CHILD ITEM in a grid to ensure its size never exceeds that of its content. */
+
+
+
+
+/* =============================================================== */
+/* USING CLAMP WITH GRID: */
+
+/* CLAMP TAKES 3 ARGS in order: ***  min-size, ideal-size, max-size  ***    */
+
+/* It is usually best practice to use a dynamic value for the ideal size: */
+
+/* If I set a width as clamp(500px, 80%, 1200px) =>  the element will render at 80% of its parents width unless the available space is less than 500px or higher than 1200px */
+
+.container-3 {
+  margin-top: 20px;
+  background-color: dodgerblue;
+  display: grid;
+  gap: 15px;
+  padding: 10px;
+
+  /* Notice how the tracks stay at 20% of the width until they hit min or max thresholds: */
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+
+  resize: both;
+  overflow: auto;
+}
+
+.boxy {
+  background-color: gold;
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =============================================================== */
+/* USING AUTO-FIT and AUTO-FILL: */
+
+/* Used inside of a repeat function - Make the number of columns felxible */
+
+/* Both of these functions will return the largest possible positive integer without the grid items overflowing their container */
+
+
+
+/* ==== AUTO-FIT ==== */
+/* In this example as I have set the grid at a fixed size of 1050px with the gap set at 10px and padding at 10px (resulting in 50px total for 5 tracks) */
+/* setting the columns as auto-fit 200px means that there will always be 5 items per row as 1000 / 200 === 5  */
+.container-4 {
+  background-color: crimson;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+
+  width: 1050px;
+  /* IF THE WIDTH IS REMOVED (UNFIXED) => the tracks will fill available space and act responsive as the page is stretched */
+
+
+
+  /* Margin can be used by accepting multiple values - auto is being applied to the margin-right: */
+  margin: 25px auto;
+
+
+  grid-template-columns: repeat(auto-fit, 200px);
+  
+  /* Adding the grid-template-rows adjusts the height for cells as needed */
+  /* grid-template-rows: 200px; */
+
+
+  /* Then applying grid-auto-rows as 200px ensures that new items added to the grid will abide by the 200px height */
+  /* grid-auto-rows can be used in isolationg without needing the grid-template-rows property */
+  /* grid-auto-rows: 200px; */
+}
+
+.boxy-2 {
+  background-color: cornflowerblue;
+  border: 2px solid wheat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ==============  USING AUTOFIT with MINMAX  ================ */
+
+/* Using minmax with autofit means that the browser will assess the size of the window it has available. */
+/* It will then determine how many items it can fit into that space based on the MIN value in the minmax. */
+/* If the width of the container is 500px and the minmax is set as 150px then 3 columns can fit within the grid. */
+/* if the size exceeds 500px but cannot fit 4 columns i.e. is between 500px and 650px then it will size the columns equally based on the MAX value */
+.container-5 {
+  margin-top: 20px;
+  background-color:indianred;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  resize: both;
+  overflow: auto;
+}
+
+.boxy-3 {
+  background-color: deepskyblue;
+  border: 2px solid cadetblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ==============  USING AUTOFILL instead of AUTO-FIT  ================ */
+
+/* The difference between auto-fill and auto-fit is only noticeable when the grid has less elements inside than can fill the available space. */
+/* auto-fill will snap elements back to their min width once the available space exceeds the amount of available elements */
+.container-6 {
+  margin-top: 20px;
+  background-color: dodgerblue;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+
+
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+
+  resize: both;
+  overflow: auto;
+}
+
+.boxy-4 {
+  background-color: gold;
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
