@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
+.header {
+  background-color: rebeccapurple;
+}
+
+.sidebar {
+  background-color: dodgerblue;
+}
+
+.main {
+  background-color: darkgrey;
+}
