@@ -3,36 +3,38 @@ getComputerChoice = () => {
   return choices[Math.floor(Math.random() * 3)]
 }
 
-playRound = (playerSelection, computerSelection) => {
-  playerSelection.toLowerCase();
+playRound = (playerSelection) => {
+  const roundResultContainer = document.querySelector("#resultsContainer");
+  const computersPickDiv = document.querySelector("#computerSelection");
+  roundResultContainer.innerHTML = "";
+  computersPickDiv.innerHTML = "";
+
+  const computerSelection = getComputerChoice()
   console.log(computerSelection);
 
+  const computersPick = document.createElement('h1');
+  const roundResult = document.createElement('h1');
+  computersPick.innerText = computerSelection
+  computersPickDiv.appendChild(computersPick);
+
   if (playerSelection === computerSelection) {
-    // return "Draw";
-    const playerSelection = prompt();
-    return playRound(playerSelection, getComputerChoice());
+    // Draw
+    console.log('Draw');
+    roundResult.innerText = 'Draw';
+    roundResultContainer.append(roundResult);
   } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection == 'rock') {
-    return 'You lose!'
+    roundResult.innerText = 'Computer Wins';
+    roundResultContainer.append(roundResult);
   } else {
-    return 'You win!'
+    roundResult.innerText = 'Player Wins';
+    roundResultContainer.append(roundResult);
   }
 }
 
-// console.log(playRound('rock', getComputerChoice()));
-// console.log(playRound('rock', getComputerChoice()));
-// console.log(playRound('rock', getComputerChoice()));
-// console.log(playRound('rock', getComputerChoice()));
+const rockButton = document.querySelector("#rockBtn")
+const paperButton = document.querySelector("#paperBtn")
+const scissorsButton = document.querySelector("#scissorsBtn")
 
-const game = () => {
-  let playerScore = 0
-  let computerScore = 0
-
-  for (let i = 0; i < 5; i++) {
-    // Would need to sanitize user inputs here -> will likely force the input being passed as first arg via a button for each possible choice.
-    playRound(prompt(), getComputerChoice()) === 'You win!' ? playerScore += 1 : computerScore += 1
-  }
-
-  return playerScore > computerScore ? `You win! with a score of ${playerScore}` : `The computer wins! with a score of ${computerScore}`
-}
-
-// console.log(game());
+rockButton.addEventListener('click', () => playRound('rock'))
+paperButton.addEventListener('click', () => playRound('paper'))
+scissorsButton.addEventListener('click', () => playRound('scissors'))

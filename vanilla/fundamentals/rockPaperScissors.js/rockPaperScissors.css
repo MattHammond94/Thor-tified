@@ -1,0 +1,19 @@
+.container {
+  margin: 0px 0px auto auto;
+  display: grid;
+  gap: 15px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: dodgerblue;
+  border-radius: 25px;
+  height: 200px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: whitesmoke;
+}

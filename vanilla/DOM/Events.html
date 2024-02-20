@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+</head>
+<body>
+  <p>Event bubbling => Is the process of an event firing in the selected element and then passing through each parent element untilt it reaches the document object</p>
+  <p>A click in a button would bubble as such: Element(Button) => Element(div) => Element(body) => Element(html) => Document => Window (Most modern broseers bubble events up to the window object)</p>
+
+  <p>Event capturing is similar however the events take place in the reverse order and start at the least specific flowing down towards the event that took place.</p>
+
+  <p>In effect then when a button is pressed 3 events takes place: EVENT CAPTURING makes its way from the document or window to the Element => The actual Target receives the event => EVENT BUBBLING occurs and returns the final response to the event.</p>
+</body>
+</html>
