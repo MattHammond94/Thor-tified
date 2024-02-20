@@ -26,8 +26,31 @@ div.textContent = 'Hello World'
 
 // New element is then added to the dom as below:
 container.appendChild(div)
-// document.insertBefore(div, div);
 
 // Remove the element from the DOM:
 // container.removeChild(div);
+
+// Tasks: 
+const redP = document.createElement('p');
+
+redP.textContent = "Hey, I'm Red!";
+
+redP.setAttribute('style', 'color: red;');
+
+const blueHeader = document.createElement('h3');
+
+blueHeader.textContent = "I'm a blue h3!";
+
+blueHeader.setAttribute('style', 'color: blue;');
+
+container.appendChild(redP);
+container.insertBefore(blueHeader, redP);
+
+const blackBorder = document.createElement('div');
+
+blackBorder.setAttribute('style', 'border: 10px solid black; background-color: pink');
+
+blackBorder.innerHTML = "<h1>I'm In a div</h1><p>ME TOO!</p>"
+
+container.appendChild(blackBorder);
 
