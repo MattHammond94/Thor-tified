@@ -35,4 +35,4 @@ const game = () => {
   return playerScore > computerScore ? `You win! with a score of ${playerScore}` : `The computer wins! with a score of ${computerScore}`
 }
 
-console.log(game());
+// console.log(game());

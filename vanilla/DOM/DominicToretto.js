@@ -83,5 +83,17 @@ const btn5 = document.querySelector("#btn5")
 // Information about the event:
 btn5.addEventListener('click', function (e) {
   console.log(e.target);
+
+  // Mutating the event target:
   e.target.style.background = 'blue';
 });
+
+
+// Groups of events:
+const btnz = document.querySelectorAll("#groupedButton");
+
+btnz.forEach((button) => {
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+})
