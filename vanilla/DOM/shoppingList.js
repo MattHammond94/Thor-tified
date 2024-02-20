@@ -3,15 +3,21 @@ const input = document.querySelector('#item');
 const button = document.querySelector("#submitBtn")
 
 addItem = () => {
-  console.log(input.value)
-
   let item = document.createElement('li');
   item.textContent = input.value;
-  console.log(item);
 
-  
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = "Delete";
+  item.appendChild(deleteButton);
+
   list.appendChild(item);
   input.value = ''
+  input.focus();
+
+  deleteItem = () => {
+    list.removeChild(item);
+  }
+  deleteButton.addEventListener('click', deleteItem);
 }
 
 button.addEventListener('click', addItem);
