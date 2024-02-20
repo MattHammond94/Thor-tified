@@ -1,0 +1,15 @@
+#container {
+  background-color: red;
+  height: 400px;
+  margin: 0px 0px auto auto;
+}
+
+.display {
+  background-color: rebeccapurple;
+  height: 50%;
+}
+
+.new {
+  height: 100px
+}
+
