@@ -54,3 +54,34 @@ blackBorder.innerHTML = "<h1>I'm In a div</h1><p>ME TOO!</p>"
 
 container.appendChild(blackBorder);
 
+
+
+// Event Listeners:
+
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World also, but very different");
+
+const btn3 = document.querySelector('#btn3');
+btn3.addEventListener('click', () => {
+  alert("This alert is inside an event listener");
+});
+
+loggerFunction = () => {
+  console.log('A click was logged');
+}
+
+aDifferentLogger = () => {
+  console.log('This log was run through an event listener on click')
+}
+
+const btn4 = document.querySelector("#btn4");
+btn4.addEventListener('click', aDifferentLogger);
+
+const btn5 = document.querySelector("#btn5")
+
+// ==================================================
+// Information about the event:
+btn5.addEventListener('click', function (e) {
+  console.log(e.target);
+  e.target.style.background = 'blue';
+});
