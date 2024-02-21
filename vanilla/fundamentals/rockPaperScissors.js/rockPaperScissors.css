@@ -17,3 +17,20 @@
   cursor: pointer;
   color: whitesmoke;
 }
+
+#computerSelection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: dodgerblue;
+}
+
+#resultsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: dodgerblue;
+}

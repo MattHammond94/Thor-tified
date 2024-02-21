@@ -14,12 +14,10 @@ playRound = (playerSelection) => {
 
   const computersPick = document.createElement('h1');
   const roundResult = document.createElement('h1');
-  computersPick.innerText = computerSelection
+  computersPick.innerText = `The computers selection was: ${computerSelection}`
   computersPickDiv.appendChild(computersPick);
 
   if (playerSelection === computerSelection) {
-    // Draw
-    console.log('Draw');
     roundResult.innerText = 'Draw';
     roundResultContainer.append(roundResult);
   } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection == 'rock') {
