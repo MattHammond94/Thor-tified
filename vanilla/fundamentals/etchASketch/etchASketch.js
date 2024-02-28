@@ -9,6 +9,7 @@ clearButton.addEventListener("click", () => {
 })
 
 function makeGrid(scale) {
+  grid.innerHTML = '';
   let pixelSize = 100 / scale;
 
   for (let i = 0; i < scale * scale; i++) {
@@ -49,25 +50,20 @@ function randomNumber() {
 }
 
 function changeGridSize() {
-  console.log(inputField.value);
-
-  // get newscale from the number input
   let newScale = inputField.value
 
-// use function to check what the number is (validate input)
   if (!validateScale(newScale)) {
     errorMessage.textContent = 'This input is invalid';
-    inputField.value = ''
+    return inputField.value = ''
   } else {
     errorMessage.textContent = '';
   }
   
-  // create new grid based on this newScale
-
+  makeGrid(newScale);
 }
 
 function validateScale(scale) {
   return scale > 100 || scale < 16 || isNaN(scale) ? false : true;
 }
 
-makeGrid(16)
+makeGrid(50);
