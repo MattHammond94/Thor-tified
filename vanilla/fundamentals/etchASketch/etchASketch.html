@@ -9,13 +9,23 @@
   <title>Etch A Sketch</title>
 </head>
 <body>
-  <div class="sketchTemplate">
-    <div class="grid">
+  <main>
+    <div class="sketchTemplate">
+      <div class="grid">
+      </div>
+      <div class="toolbar">
+        <button class="clearBtn">Clear</button>
+        <div class="inputSection">
+          <p>Change Grid Size:</p>
+          <div>
+            <input type="number" class="input">
+            <button onclick="changeGridSize(100);">Update Grid</button>
+          </div>
+          <p class="errorMessage"></p>
+        </div>
+        <button class="rainbowBtn" onclick="activeRainbowMode();">Toggle Rainbow Mode</button>
+      </div>
     </div>
-    <div class="toolbar">
-      <button class="clearBtn">Clear</button>
-      <button class="rainbowBtn" onclick="activeRainbowMode();">Activate Rainbow Mode</button>
-    </div>
-  </div>
+  </main>
 </body>
 </html>

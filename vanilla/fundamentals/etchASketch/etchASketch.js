@@ -1,5 +1,7 @@
 const grid = document.querySelector('.grid');
 const clearButton = document.querySelector('.clearBtn');
+const errorMessage = document.querySelector('.errorMessage');
+const inputField = document.querySelector('.input');
 let rainbowMode = false;
 
 clearButton.addEventListener("click", () => {
@@ -9,7 +11,6 @@ clearButton.addEventListener("click", () => {
 function makeGrid(scale) {
   let pixelSize = 100 / scale;
 
-  console.log(rainbowMode);
   for (let i = 0; i < scale * scale; i++) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
@@ -47,4 +48,26 @@ function randomNumber() {
   return Math.floor(Math.random() * 255);
 }
 
-makeGrid(50)
+function changeGridSize() {
+  console.log(inputField.value);
+
+  // get newscale from the number input
+  let newScale = inputField.value
+
+// use function to check what the number is (validate input)
+  if (!validateScale(newScale)) {
+    errorMessage.textContent = 'This input is invalid';
+    inputField.value = ''
+  } else {
+    errorMessage.textContent = '';
+  }
+  
+  // create new grid based on this newScale
+
+}
+
+function validateScale(scale) {
+  return scale > 100 || scale < 16 || isNaN(scale) ? false : true;
+}
+
+makeGrid(16)
