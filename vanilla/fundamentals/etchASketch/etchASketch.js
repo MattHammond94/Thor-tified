@@ -57,9 +57,9 @@ function changeGridSize() {
     return inputField.value = ''
   } else {
     errorMessage.textContent = '';
+    inputField.value = ''
+    makeGrid(newScale);
   }
-  
-  makeGrid(newScale);
 }
 
 function validateScale(scale) {
