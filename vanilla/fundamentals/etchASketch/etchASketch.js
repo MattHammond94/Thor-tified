@@ -1,11 +1,34 @@
-const container = document.querySelector('.container');
+const grid = document.querySelector('.grid');
+const clearButton = document.querySelector('.clearBtn');
 
-function makeGrid(size) {
-  for (let i = 0; i === size; i++) {
-      const pixel = document.createElement('div');
-      pixel.squareDiv.classList.add("pixel");
-      container.appendChild(pixel);
+clearButton.addEventListener("click", () => {
+  clearGrid();
+})
+
+function makeGrid(scale) {
+  let pixelSize = 100 / scale;
+
+  for (let i = 0; i < scale * scale; i++) {
+    let pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.width = `${pixelSize}%`;
+    pixel.style.height = `${pixelSize}%`;
+    grid.appendChild(pixel);
+
+    pixel.addEventListener("mouseover", (event) => {
+      pixel.style.backgroundColor = 'black';
+    })
   }
 }
 
-makeGrid(16)
+function clearGrid() {
+  console.log("Clear button clicked");
+
+  let allPixels = document.querySelectorAll(".pixel");
+  
+  allPixels.forEach((pixel) => 
+    { pixel.style.backgroundColor = 'lightsteelblue'}
+  );
+}
+
+makeGrid(50)
