@@ -9,8 +9,54 @@ main {
   align-items: center;
 }
 
+button {
+  font-size: 1.2em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: darkslategrey;
+}
+
 .calculatorContainer {
+  height: 450px;
+  width: 350px;
   margin: 100px auto auto auto;
+  border-radius: 25px;
   background-color: dodgerblue;
   display: grid;
+  grid-template-rows: 2fr 5fr;
+}
+
+.viewPort {
+  align-self: last baseline;
+  justify-self: center;
+  background-color: lightslategray;
+  width: 95%;
+  height: 90%;
+  border-radius: 25px;
+}
+
+.buttonMenu {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.operatorsPanel {
+  display: grid;
+  gap: 5px;
+  padding: 10px 0px 10px 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.numbersPanel {
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.numbersPanel button:last-child {
+  grid-column: 2 / 3;
 }
