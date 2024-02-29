@@ -25,7 +25,7 @@ function selectOperator(operation) {
 }
 
 function selectNumber(number) {
-  if (currentOperation === '+') {
+  if (currentOperation !== '') {
     secondValue += number
     return display.innerHTML = secondValue
   }
@@ -39,6 +39,10 @@ function equals() {
 
   if (currentOperation === '+') {
     chosenOperation = add
+  } else if (currentOperation === '-') {
+    chosenOperation = subtract
+  } else if (currentOperation === '*') {
+    chosenOperation = multiply
   }
 
   let sumValue = completeOperation(parseInt(currentValue), parseInt(secondValue), chosenOperation);
