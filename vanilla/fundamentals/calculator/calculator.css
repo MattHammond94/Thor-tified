@@ -1,0 +1,16 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculatorContainer {
+  margin: 100px auto auto auto;
+  background-color: dodgerblue;
+  display: grid;
+}
