@@ -58,7 +58,7 @@ button {
   display: grid;
   gap: 5px;
   padding: 10px 0px 10px 10px;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .numbersPanel {
@@ -67,8 +67,4 @@ button {
   padding: 10px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.numbersPanel button:last-child {
-  grid-column: 2 / 3;
 }

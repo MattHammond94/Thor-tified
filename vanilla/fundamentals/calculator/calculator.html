@@ -12,27 +12,29 @@
   <main>
     <div class="calculatorContainer">
       <div class="viewPort">
+        <p class="displayNumber"></p>
       </div>
       <div class="buttonMenu">
         <div class="operatorsPanel">
-          <button>+</button>
-          <button>-</button>
-          <button>/</button>
-          <button>*</button>
-          <button>=</button>
-          <button onclick="clearDisplay();">Clear</button>
+          <button class="operatorBtn">+</button>
+          <button class="operatorBtn">-</button>
+          <button class="operatorBtn">/</button>
+          <button class="operatorBtn">*</button>
+          <button onclick="equals();">=</button>
         </div>
         <div class="numbersPanel">
-          <button onclick="addNumberToDisplay(1);">1</button>
-          <button onclick="addNumberToDisplay(2);">2</button>
-          <button onclick="addNumberToDisplay(3);">3</button>
-          <button onclick="addNumberToDisplay(4);">4</button>
-          <button onclick="addNumberToDisplay(5);">5</button>
-          <button onclick="addNumberToDisplay(6);">6</button>
-          <button onclick="addNumberToDisplay(7);">7</button>
-          <button onclick="addNumberToDisplay(8);">8</button>
-          <button onclick="addNumberToDisplay(9);">9</button>
-          <button onclick="addNumberToDisplay(0);">0</button>
+          <button class="valueBtn">1</button>
+          <button class="valueBtn">2</button>
+          <button class="valueBtn">3</button>
+          <button class="valueBtn">4</button>
+          <button class="valueBtn">5</button>
+          <button class="valueBtn">6</button>
+          <button class="valueBtn">7</button>
+          <button class="valueBtn">8</button>
+          <button class="valueBtn">9</button>
+          <button class="valueBtn">0</button>
+          <button onclick="deleteLastNumber();">Delete</button>
+          <button onclick="clearNumbers();">Clear</button>
         </div>
       </div>
     </div>
