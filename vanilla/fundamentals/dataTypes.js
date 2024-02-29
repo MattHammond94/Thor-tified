@@ -27,3 +27,49 @@ const numsAndStrings = () => {
   const variable = 2 + "cabbage"
   return typeof variable
 }
+
+
+// Iterators: 
+
+// Map:
+
+const tripledNumbersWithMap = (array) => {
+  return array.map((number) => number * 3)
+}
+
+console.log(tripledNumbersWithMap([2, 6, 10]));
+
+// Filter:
+const filterOutOdds = (array) => {
+  return array.filter((number) => number % 2 === 0);
+}
+
+console.log(filterOutOdds([3, 5, 8, 1, 10]));
+
+// Reduce:
+
+const multiplyAllTogether = (arr) => {
+  return arr.reduce((total, currentItem) => total * currentItem);
+}
+
+console.log(multiplyAllTogether([3, 3, 3]));
+
+
+// Solution:
+
+function sumOfTripledEvens(array) {
+  return array.map((number) => number % 2 === 0 ? number * 3 : number)
+    .reduce((totalSum, currentNumber) => totalSum + currentNumber);
+}
+
+console.log(sumOfTripledEvens([1, 4, 5, 8, 10]));
+
+// Correct solution (only summing the evens):
+function sumOfTripledEvens2(array) {
+  return array
+    .filter((num) => num % 2 === 0)
+    .map((num) => num * 3)
+    .reduce((acc, curr) => acc + curr);
+}
+
+console.log(sumOfTripledEvens2([1, 4, 5, 8, 10]));
