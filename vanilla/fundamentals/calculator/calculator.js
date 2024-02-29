@@ -1,3 +1,15 @@
+const display = document.querySelector('.viewPort');
+
+function addNumberToDisplay(number) {
+  const newNumber = document.createElement('p');
+  newNumber.innerHTML = number;
+  return display.appendChild(newNumber);
+}
+
+function clearDisplay() {
+  display.innerHTML = ''
+}
+
 function add(num1, num2) {
   return num1 + num2;
 }
