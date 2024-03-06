@@ -19,17 +19,21 @@ let secondValue = '';
 let currentOperation = '';
 
 function selectOperator(operation) {
+  if (currentOperation !== '') {
+    equals()
+  }
+
   currentOperation = operation;
 }
 
 function selectNumber(number) {
   if (currentOperation !== '') {
     secondValue += number
-    return display.innerHTML = secondValue
+    changeDisplay(secondValue);
+  } else {
+    currentValue += number;
+    changeDisplay(currentValue);
   }
-
-  display.innerHTML += number;
-  return currentValue = display.innerHTML;
 }
 
 function equals() {
@@ -39,7 +43,7 @@ function equals() {
   }
 
   let sumValue = completeOperation(parseInt(currentValue), parseInt(secondValue), operatorChoser());
-  display.innerHTML = sumValue;
+  changeDisplay(sumValue);
   currentValue = sumValue;
   currentOperation = '';
   secondValue = '';
@@ -47,15 +51,15 @@ function equals() {
 }
 
 function clearNumbers() {
-  display.innerHTML = ''
+  display.innerHTML = '';
   currentValue = '';
   secondValue = '';
+  currentOperation = '';
 }
 
 function deleteLastNumber() {
   display.innerHTML = display.innerHTML.slice(0, -1);
   currentValue = display.innerHTML;
-  console.log(currentValue);
 }
 
 function add(num1, num2) {
@@ -92,4 +96,8 @@ function operatorChoser() {
   }
 
   return chosenOperation;
+}
+
+function changeDisplay(value) {
+  return display.innerHTML = value;
 }
