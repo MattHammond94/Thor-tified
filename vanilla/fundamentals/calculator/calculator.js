@@ -19,9 +19,7 @@ let secondValue = '';
 let currentOperation = '';
 
 function selectOperator(operation) {
-  console.log(`this is the operator: ${operation}`);
   currentOperation = operation;
-  console.log(currentOperation);
 }
 
 function selectNumber(number) {
@@ -35,17 +33,12 @@ function selectNumber(number) {
 }
 
 function equals() {
-  let chosenOperation = null;
-
-  if (currentOperation === '+') {
-    chosenOperation = add
-  } else if (currentOperation === '-') {
-    chosenOperation = subtract
-  } else if (currentOperation === '*') {
-    chosenOperation = multiply
+  if (currentValue === '' || secondValue === '') {
+    // Can add better handling here if needed
+    return;
   }
 
-  let sumValue = completeOperation(parseInt(currentValue), parseInt(secondValue), chosenOperation);
+  let sumValue = completeOperation(parseInt(currentValue), parseInt(secondValue), operatorChoser());
   display.innerHTML = sumValue;
   currentValue = sumValue;
   currentOperation = '';
@@ -83,4 +76,20 @@ function divide(num1, num2) {
 
 function completeOperation(firstNum, secondNum, operation) {
   return operation(firstNum, secondNum);
+}
+
+function operatorChoser() {
+  let chosenOperation = null;
+
+  if (currentOperation === '+') {
+    chosenOperation = add
+  } else if (currentOperation === '-') {
+    chosenOperation = subtract
+  } else if (currentOperation === '*') {
+    chosenOperation = multiply
+  } else if (currentOperation === '/') {
+    chosenOperation = divide
+  }
+
+  return chosenOperation;
 }
